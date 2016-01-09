@@ -1,5 +1,4 @@
 import java.awt.Color;
-import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,8 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-
-import javafx.scene.paint.Color;
 
 public class Controller extends JPanel implements ActionListener{
 
@@ -51,7 +48,7 @@ public class Controller extends JPanel implements ActionListener{
 		g.drawRect(50, 70, 50, 30);
 		if(klokkie.getTijd() == 5000){
 			timer.stop();
-			g.setBackground(Color.red);
+			g.setColor(Color.red);
 		}
 	}
 
@@ -60,6 +57,7 @@ public class Controller extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		klokkie.plus(10);
 		this.repaint();
+		
 		
 		
 	
