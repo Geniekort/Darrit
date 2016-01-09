@@ -11,7 +11,7 @@ public class Controller extends JPanel implements ActionListener{
 	private static final long serialVersionUID = 1L;
 
 	JFrame frame;
-	javax.swing.Timer timer;
+	Timer timer;
 	Tijd klokkie;
 	
 	public Controller(String name){
@@ -22,6 +22,7 @@ public class Controller extends JPanel implements ActionListener{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		
+		frame.add(this);
 		
 		timer = new Timer(100, this);
 		timer.start();
@@ -40,14 +41,12 @@ public class Controller extends JPanel implements ActionListener{
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		klokkie.draw(g);
-		System.out.println("Do");
 	}
 
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		klokkie.plus(10);
-		System.out.println("here");
 		this.repaint();
 	}
 	
