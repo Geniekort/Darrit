@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Tijd {
@@ -8,6 +9,8 @@ public class Tijd {
 	}
 	
 	public void draw(Graphics g) {
-		
+		g.setColor(Color.BLACK);
+		g.drawString("hi", 20,20);
+		System.out.println("Zoals");
 	}
 }

@@ -12,8 +12,10 @@ public class Controller extends JPanel implements ActionListener{
 
 	JFrame frame;
 	javax.swing.Timer timer;
+	Tijd klokkie;
 	
 	public Controller(String name){
+		
 		
 		frame = new JFrame(name);
 		frame.setSize(200, 200);
@@ -22,6 +24,11 @@ public class Controller extends JPanel implements ActionListener{
 		
 		
 		timer = new Timer(100, this);
+		timer.start();
+		
+		klokkie = new Tijd();
+		
+		
 		
 	}
 	
@@ -31,14 +38,17 @@ public class Controller extends JPanel implements ActionListener{
 	}
 	
 	public void paintComponent(Graphics g){
-		
+		super.paintComponent(g);
+		klokkie.draw(g);
+		System.out.println("Do");
 	}
 
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
+		klokkie.plus(10);
+		System.out.println("here");
+		this.repaint();
 	}
 	
 	
