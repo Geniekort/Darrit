@@ -18,5 +18,6 @@ public class Tijd {
 	
 	public int getTijd() {
 		return tijd;
+
 	}
 }
