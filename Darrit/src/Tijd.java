@@ -16,7 +16,7 @@ public class Tijd {
 		g.drawString(Integer.toString(tijd), 20,300);
 	}
 	
-	public void getTijd() {
-		
+	public int getTijd() {
+		return tijd;
 	}
 }
