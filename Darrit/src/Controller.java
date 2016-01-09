@@ -41,6 +41,8 @@ public class Controller extends JPanel implements ActionListener{
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		klokkie.draw(g);
+		g.drawLine(120, 15, 150, 40);
+		g.drawRect(50, 70, 50, 30);
 	}
 
 
@@ -48,6 +50,10 @@ public class Controller extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		klokkie.plus(10);
 		this.repaint();
+		if(timer.getTijd() == 5000){
+			timer.stop();
+		}
+	
 	}
 	
 	

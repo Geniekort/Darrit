@@ -15,4 +15,8 @@ public class Tijd {
 		g.setFont(font);
 		g.drawString(Integer.toString(tijd), 20,300);
 	}
+	
+	public void getTijd() {
+		
+	}
 }
