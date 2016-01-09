@@ -19,8 +19,9 @@ public class Controller extends JPanel implements ActionListener{
 		
 		
 		frame = new JFrame(name);
-		frame.setSize(200, 200);
+		frame.setSize(1000, 1000);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		
 		
@@ -44,18 +45,18 @@ public class Controller extends JPanel implements ActionListener{
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		klokkie.draw(g);
-		g.drawLine(120, 15, 150, 40);
+		g.drawLine(120, 15, klokkie.getTijd()/2, klokkie.getTijd());
 		g.drawRect(50, 70, 50, 30);
-		if(klokkie.getTijd() == 5000){
-			timer.stop();
-			g.setColor(Color.red);
-		}
 	}
 
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		klokkie.plus(10);
+		if(klokkie.getTijd() == 1000){
+			timer.stop();
+			this.setBackground(Color.red);
+		}
 		this.repaint();
 		
 		
