@@ -41,7 +41,7 @@ public class Tijd {
 		g.setFont(font);
 		g.drawString(Integer.toString(tijd), 20,300);
 		g.drawOval(x-radius, y-radius,2*radius,2*radius);
-		g.drawLine(x, y, (Math.sin(sec/60*2*Math.PI)), Math.cos(sec/60*2*Math.PI));
+		g.drawLine(x, y, (int)(Math.sin(sec/60*2*Math.PI)), (int)Math.cos(sec/60*2*Math.PI));
 	}
 	
 	public int getTijd() {
