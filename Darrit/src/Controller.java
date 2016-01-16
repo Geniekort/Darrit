@@ -27,11 +27,11 @@ public class Controller extends JPanel implements ActionListener{
 		
 		frame.add(this);
 		
-		timer = new Timer(100, this);
+		timer = new Timer(1, this);
 		timer.start();
 		
 		
-		klokkie = new Tijd();
+		klokkie = new Tijd(150, 150 , 100);
 		
 		
 		
@@ -45,14 +45,12 @@ public class Controller extends JPanel implements ActionListener{
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		klokkie.draw(g);
-		g.drawLine(120, 15, klokkie.getTijd()/2, klokkie.getTijd());
-		g.drawRect(50, 70, 50, 30);
 	}
 
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		klokkie.plus(10);
+		klokkie.update();
 		if(klokkie.getTijd() == 1000){
 			timer.stop();
 			this.setBackground(Color.red);
