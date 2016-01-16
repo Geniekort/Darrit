@@ -15,8 +15,7 @@ public class Tijd {
 	}
 	
 	public void update(){
-		plus(1);
-		sec = tijd/1000;
+		sec = tijd;
 		
 	}
 	
@@ -39,9 +38,8 @@ public class Tijd {
 	public void draw(Graphics g) {
 		g.setColor(Color.BLACK);
 		g.setFont(font);
-		g.drawString(Integer.toString(tijd), 20,300);
 		g.drawOval(x-radius, y-radius,2*radius,2*radius);
-		g.drawLine(x, y, (int)(Math.sin(sec/60*2*Math.PI)), (int)Math.cos(sec/60*2*Math.PI));
+		g.drawLine(x, y, x + (int)((Math.sin((double)sec/6000*2*Math.PI)*radius)), y - (int)(Math.cos((double)sec/6000*2*Math.PI)*radius));
 	}
 	
 	public int getTijd() {

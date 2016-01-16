@@ -51,10 +51,7 @@ public class Controller extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		klokkie.update();
-		if(klokkie.getTijd() == 1000){
-			timer.stop();
-			this.setBackground(Color.red);
-		}
+		klokkie.plus(1);
 		this.repaint();
 		
 		
