@@ -1,13 +1,14 @@
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class Controller extends JPanel implements ActionListener{
+public class Controller extends JPanel implements ActionListener, MouseListener{
 
 	private static final long serialVersionUID = 1L;
 
@@ -23,6 +24,7 @@ public class Controller extends JPanel implements ActionListener{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+		frame.addMouseListener(this);
 		
 		
 		frame.add(this);
@@ -57,6 +59,41 @@ public class Controller extends JPanel implements ActionListener{
 		
 		
 	
+	}
+
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println(e.getX());
+		
+	}
+
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+
+	}
+
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
