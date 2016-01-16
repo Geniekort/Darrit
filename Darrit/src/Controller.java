@@ -45,8 +45,6 @@ public class Controller extends JPanel implements ActionListener{
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		klokkie.draw(g);
-		g.drawLine(120, 15, klokkie.getTijd()/2, klokkie.getTijd());
-		g.drawRect(50, 70, 50, 30);
 	}
 
 
